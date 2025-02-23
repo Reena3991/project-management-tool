@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectService } from '../project.service';
-import { Project } from '../project.model';
+import { ProjectService } from './project.service';
+import { Project } from './project.model';
 
 @Component({
   selector: 'app-project-list',
@@ -9,6 +9,7 @@ import { Project } from '../project.model';
 })
 export class ProjectListComponent implements OnInit {
   projects: Project[] = [];
+  project: Project = { name: '', description: '', deadline: '' };
 
   constructor(private projectService: ProjectService) {}
 
@@ -25,6 +26,12 @@ export class ProjectListComponent implements OnInit {
   deleteProject(id: number) {
     this.projectService.deleteProject(id).subscribe(() => {
       this.loadProjects(); // Reload projects after deletion
+    });
+  }
+
+ createProject() {
+    this.projectService.createProject(this.project).subscribe(() => {
+      alert('Project created!');
     });
   }
 

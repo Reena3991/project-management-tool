@@ -31,7 +31,6 @@
     "@ngrx/store": "^16.3.0",
     "@ngrx/store-devtools": "^16.3.0",
     "ang-jsoneditor": "^3.1.1",
-
     "bootstrap": "^4.6.0",
     "file-saver": "^2.0.5",
     "jsoneditor": "^9.4.1",
